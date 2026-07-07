@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/mudanur-hospital/',
+  base: './',
   build: {
     outDir: 'dist',
     assetsInlineLimit: 0
