@@ -1,7 +1,5 @@
 import HospitalPhoto from '../images/Hospital.jpeg'
-
-const fieldClass =
-  'mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none focus:border-brand-teal focus:ring-4 focus:ring-brand-teal/10'
+import AppointmentForm from './AppointmentForm.jsx'
 
 export default function Hero() {
   return (
@@ -33,46 +31,7 @@ export default function Hero() {
                   routine check-ups to advanced treatments.
                 </p>
 
-                <div
-                  id="consultation"
-                  className="reveal mt-6 sm:mt-8 max-w-xl scroll-mt-32 rounded-[24px] border border-slate-200 bg-slate-50/90 p-4 sm:p-6 shadow-soft backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-blue/25 hover:shadow-softLg"
-                  style={{ '--reveal-delay': '240ms' }}
-                >
-                  <div className="space-y-1.5 sm:space-y-2">
-                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-teal">
-                      Book Consultation
-                    </p>
-                    <h3 className="text-lg sm:text-xl font-bold text-brand-ink">
-                      Get expert advice from Dr. S. R. Mudanur
-                    </h3>
-                  </div>
-
-                  <div className="mt-4 sm:mt-5 grid gap-3 sm:gap-4">
-                    <label className="block text-xs sm:text-sm font-medium text-slate-700">
-                      First Name
-                      <input type="text" placeholder="Your name" className={fieldClass + ' text-xs sm:text-sm'} />
-                    </label>
-                    <label className="block text-xs sm:text-sm font-medium text-slate-700">
-                      Phone Number
-                      <input type="tel" placeholder="+91 1234567890" className={fieldClass + ' text-xs sm:text-sm'} />
-                    </label>
-                    <label className="block text-xs sm:text-sm font-medium text-slate-700">
-                      Email Address
-                      <input type="email" placeholder="you@example.com" className={fieldClass + ' text-xs sm:text-sm'} />
-                    </label>
-                    <label className="block text-xs sm:text-sm font-medium text-slate-700">
-                      Message (Optional)
-                      <textarea placeholder="How can we help?" rows="2" className={fieldClass + ' text-xs sm:text-sm'} />
-                    </label>
-                  </div>
-
-                  <button
-                    type="button"
-                    className="sheen mt-4 sm:mt-6 inline-flex w-full items-center justify-center rounded-xl bg-brand-blue px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blueDark hover:shadow-lg active:translate-y-0 min-h-[44px]"
-                  >
-                    Book Consultation Now
-                  </button>
-                </div>
+                <AppointmentForm />
               </div>
             </div>
           </div>
