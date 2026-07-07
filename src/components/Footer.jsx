@@ -49,7 +49,7 @@ export default function Footer() {
             <Logo tone="light" />
             <p className="mt-5 text-sm text-white/70 leading-relaxed max-w-sm">
               Mudanur Hospital is committed to delivering trusted, accessible and modern
-              healthcare to families in our community — every day, around the clock.
+              healthcare to families in our community - every day, around the clock.
             </p>
             <div className="mt-6 flex items-center gap-2.5">
               {['facebook', 'instagram', 'twitter', 'linkedin'].map((s) => (
@@ -115,11 +115,11 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <svg className="mt-0.5 h-4 w-4 text-brand-teal shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-                OPD: 10:00 AM – 3:00 PM · 6:00 PM – 8:00 PM (Sunday closed)
+                OPD: 10:00 AM - 3:00 PM | 6:00 PM - 8:00 PM (Sunday closed)
               </li>
               <li className="flex items-start gap-2.5">
                 <svg className="mt-0.5 h-4 w-4 text-brand-teal shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.1 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
-                Emergency Service: 24×7
+                Emergency Service: 24/7
               </li>
             </ul>
           </div>

@@ -9,7 +9,7 @@ function DoctorCard({ d, i }) {
 
   return (
     <article
-      className="reveal group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50"
+      className="reveal group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50"
       style={{ '--reveal-delay': `${Math.min(i, 8) * 55}ms` }}
     >
       {/* Photo */}
@@ -32,12 +32,12 @@ function DoctorCard({ d, i }) {
 
       {/* Content */}
       <div className="flex flex-1 flex-col p-4">
-        <h3 className="text-sm font-medium text-slate-900">{d.name}</h3>
+        <h3 className="break-words text-sm font-medium leading-snug text-slate-900">{d.name}</h3>
         <p className="mt-1 text-[11px] font-semibold uppercase tracking-wide text-blue-600">
           {d.qualification}
         </p>
         <div className="mt-3">
-          <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[11px] font-medium text-blue-700">
+          <span className="inline-flex max-w-full rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[11px] font-medium leading-snug text-blue-700">
             {d.specialization}
           </span>
         </div>
@@ -65,7 +65,7 @@ export default function Doctors() {
     <section
       id="doctors"
       ref={sectionRef}
-      className="bg-gradient-to-b from-slate-50 to-white py-16"
+      className="bg-gradient-to-b from-slate-50 to-white py-14 sm:py-16"
     >
       <div className="section">
         <div className="reveal">
@@ -77,7 +77,7 @@ export default function Doctors() {
         </div>
 
         <div
-          className={`mt-14 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 transition-opacity duration-700 ${
+          className={`mt-10 grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 md:grid-cols-3 md:gap-5 lg:grid-cols-4 xl:grid-cols-6 sm:mt-14 transition-opacity duration-700 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >

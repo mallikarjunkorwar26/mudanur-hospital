@@ -44,7 +44,7 @@ export default function Services() {
       className="bg-gradient-to-b from-white to-slate-50 py-20 lg:py-28 overflow-hidden"
     >
       <div className="section">
-        <div className="reveal flex items-end justify-between mb-14">
+        <div className="reveal mb-10 flex flex-col gap-5 sm:mb-14 md:flex-row md:items-end md:justify-between">
           <SectionHeading
             eyebrow="Our Specialities"
             title="What We Treat"
@@ -82,21 +82,21 @@ export default function Services() {
           onMouseLeave={startAutoSlide}
           onTouchStart={stopAutoSlide}
           onTouchEnd={startAutoSlide}
-          className="flex gap-4 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory"
+          className="flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth pb-3 [scrollbar-width:none] sm:gap-4 sm:pb-4 [&::-webkit-scrollbar]:hidden"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {SERVICES.map((service, index) => (
             <article
               key={service.title}
-              className="reveal group snap-start shrink-0 w-56 flex flex-col items-center text-center rounded-2xl border border-slate-200 bg-white px-5 py-7 transition-all duration-300 hover:-translate-y-2 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-100/50 cursor-pointer"
+              className="reveal group flex w-[72vw] max-w-56 shrink-0 snap-start cursor-pointer flex-col items-center rounded-2xl border border-slate-200 bg-white px-4 py-5 text-center transition-all duration-300 hover:-translate-y-2 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-100/50 min-[420px]:w-48 sm:w-56 sm:px-5 sm:py-7"
               style={{ '--reveal-delay': `${Math.min(index, 6) * 55}ms` }}
             >
               {/* Icon circle */}
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-50 text-blue-600 ring-1 ring-blue-100 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white group-hover:ring-blue-600">
-                <ServiceIcon name={service.icon} className="h-8 w-8" />
+              <div className="mb-3 sm:mb-4 flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-blue-50 text-blue-600 ring-1 ring-blue-100 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white group-hover:ring-blue-600">
+                <ServiceIcon name={service.icon} className="h-7 w-7 sm:h-8 sm:w-8" />
               </div>
 
-              <h3 className="text-sm font-semibold text-slate-900 leading-snug">
+              <h3 className="text-xs sm:text-sm font-semibold text-slate-900 leading-snug">
                 {service.title}
               </h3>
 

@@ -19,7 +19,7 @@ export default function Gallery() {
 
   return (
     <>
-      <section id="gallery" className="py-20 lg:py-28 bg-white">
+      <section id="gallery" className="bg-white py-14 sm:py-20 lg:py-28">
         <div className="section">
           <div className="reveal">
             <SectionHeading
@@ -29,8 +29,8 @@ export default function Gallery() {
             />
           </div>
 
-          {/* Uniform grid — all same size, one clean row on desktop */}
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+          {/* Uniform grid, all same size, one clean row on desktop */}
+          <div className="mt-10 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:mt-14 md:grid-cols-4 lg:grid-cols-6">
             {TILES.map((t, i) => {
               const imageUrl = new URL(`../images/${t.image}`, import.meta.url).href
 
@@ -38,7 +38,7 @@ export default function Gallery() {
                 <figure
                   key={t.title}
                   onClick={() => setLightbox(i)}
-                  className="reveal group relative aspect-[3/4] cursor-pointer overflow-hidden rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                  className="reveal group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:aspect-[3/4]"
                   style={{ '--reveal-delay': `${i * 60}ms` }}
                 >
                   <img
@@ -52,7 +52,7 @@ export default function Gallery() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
 
                   {/* Caption */}
-                  <figcaption className="absolute bottom-0 left-0 right-0 px-3 py-3 translate-y-1 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  <figcaption className="absolute bottom-0 left-0 right-0 px-3 py-3 opacity-100 transition-all duration-300 md:translate-y-1 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100">
                     <p className="text-[11px] font-semibold text-white leading-snug text-center">
                       {t.title}
                     </p>
@@ -87,7 +87,7 @@ export default function Gallery() {
             {/* Close */}
             <button
               onClick={closeLightbox}
-              className="absolute -top-4 -right-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition"
+              className="absolute right-2 top-2 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/30 text-white transition hover:bg-black/50 sm:-right-4 sm:-top-4 sm:bg-white/10 sm:hover:bg-white/20"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -97,7 +97,7 @@ export default function Gallery() {
             {/* Prev */}
             <button
               onClick={prev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition"
+              className="absolute left-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/30 text-white transition hover:bg-black/50 sm:left-3 sm:bg-white/10 sm:hover:bg-white/20"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -107,7 +107,7 @@ export default function Gallery() {
             {/* Next */}
             <button
               onClick={next}
-              className="absolute right-3 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition"
+              className="absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/30 text-white transition hover:bg-black/50 sm:right-3 sm:bg-white/10 sm:hover:bg-white/20"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />

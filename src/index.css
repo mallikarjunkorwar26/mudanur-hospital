@@ -4,9 +4,22 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 96px;
+  scroll-padding-top: 80px;
+  text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  min-width: 320px;
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 96px;
+  }
 }
 
 body {
@@ -16,9 +29,16 @@ body {
   overflow-x: hidden;
 }
 
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
 /* Section utility */
 .section {
-  @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-12;
+  @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 xl:px-12;
 }
 
 ::selection {
@@ -146,5 +166,81 @@ textarea:focus {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* Mobile optimization - Better touch targets */
+@media (max-width: 768px) {
+  button,
+  input,
+  textarea {
+    min-height: 44px;
+  }
+
+  a[href^="tel:"],
+  a[href^="mailto:"],
+  a[href^="https://wa.me"] {
+    min-height: 44px;
+  }
+
+  /* Better spacing between interactive elements */
+  .rounded-2xl {
+    border-radius: 12px;
+  }
+
+  /* Optimize font sizing for readability */
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+  }
+
+  /* Better form input sizing on mobile */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+    min-height: 44px;
+    padding: 12px 16px;
+  }
+
+}
+
+/* Landscape mode adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+  .section {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  input,
+  textarea {
+    padding: 8px 12px;
+  }
+}
+
+/* Touch-friendly spacing for small screens */
+@media (max-width: 640px) {
+  .gap-4 {
+    gap: 12px;
+  }
+
+  .gap-5 {
+    gap: 16px;
+  }
+
+  .gap-6 {
+    gap: 18px;
   }
 }

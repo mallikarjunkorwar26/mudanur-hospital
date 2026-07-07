@@ -1,15 +1,19 @@
-// Reusable wordmark logo.
-// Uses the provided Mudanur Logo.png asset.
-import MudanurLogo from '../images/Mudanur Logo.png'
+import MudanurLogo from "../images/Mudanur Logo.png";
 
-export default function Logo({ tone = 'dark', compact = false }) {
+export default function Logo({ compact = false }) {
+  const sizeClass = compact ? "h-12 sm:h-14 lg:h-16" : "h-14 sm:h-16";
+
   return (
-    <a href="#home" className="flex items-center gap-3 group no-underline" aria-label="Mudanur Hospital — Home">
+    <a
+      href="#home"
+      className="flex min-w-0 items-center gap-3 no-underline"
+      aria-label="Mudanur Hospital - Home"
+    >
       <img
         src={MudanurLogo}
         alt="Mudanur Hospital logo"
-        className="h-16 w-auto object-contain"
+        className={`${sizeClass} w-auto max-w-[180px] object-contain sm:max-w-[220px]`}
       />
     </a>
-  )
+  );
 }

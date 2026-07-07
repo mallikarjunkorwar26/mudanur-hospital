@@ -35,7 +35,7 @@ export const SERVICES = [
     icon: "cancer",
   },
   {
-    title: "24×7 Emergency",
+    title: "24/7 Emergency",
     desc: "Immediate emergency medical assistance.",
     icon: "emergency",
   },

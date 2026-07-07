@@ -1,4 +1,4 @@
-// Original, lightweight SVG icons for services — no external libraries.
+// Original, lightweight SVG icons for services. No external libraries.
 const stroke = {
   fill: 'none',
   stroke: 'currentColor',
