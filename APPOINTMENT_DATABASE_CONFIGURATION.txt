@@ -1,0 +1,190 @@
+Mudanur Hospital - Appointment Database Configuration
+=====================================================
+
+Database used by this project:
+MongoDB
+
+Important:
+This appointment system is currently built with MongoDB, not SQL Server.
+The backend code uses Express.js + Mongoose, so use MongoDB for appointment storage.
+
+
+1. Local MongoDB Setup
+----------------------
+
+Install MongoDB Community Server:
+https://www.mongodb.com/try/download/community
+
+During installation:
+- Install MongoDB as a Windows Service
+- Keep default port: 27017
+
+After installation, MongoDB should run automatically.
+
+Default local database URL:
+
+MONGODB_URI=mongodb://127.0.0.1:27017/mudanur_hospital
+
+Database name:
+mudanur_hospital
+
+Appointments collection:
+appointments
+
+Counters collection:
+counters
+
+
+2. Cloud MongoDB Setup - Recommended For Live Website
+-----------------------------------------------------
+
+Use MongoDB Atlas:
+https://www.mongodb.com/atlas
+
+Steps:
+
+1. Create a free MongoDB Atlas account.
+2. Create a new cluster.
+3. Create a database user.
+4. Allow network access.
+   For testing you can allow:
+   0.0.0.0/0
+   For production, allow only your backend server IP.
+5. Copy your connection string.
+
+Example Atlas connection string:
+
+MONGODB_URI=mongodb+srv://USERNAME:PASSWORD@cluster0.xxxxx.mongodb.net/mudanur_hospital?retryWrites=true&w=majority
+
+Replace:
+- USERNAME with your MongoDB username
+- PASSWORD with your MongoDB password
+- cluster0.xxxxx.mongodb.net with your Atlas cluster host
+
+
+3. Create .env File
+-------------------
+
+In the project root folder, create a file named:
+
+.env
+
+Copy this content:
+
+PORT=5000
+MONGODB_URI=mongodb://127.0.0.1:27017/mudanur_hospital
+CLIENT_ORIGIN=http://localhost:3000
+VITE_API_URL=http://localhost:5000
+
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=admin
+ADMIN_TOKEN_SECRET=change-this-long-random-secret
+
+
+For live hosting, replace MONGODB_URI with your MongoDB Atlas URL.
+
+
+4. Start The Appointment Backend
+--------------------------------
+
+Open terminal in the project folder and run:
+
+npm run server
+
+You should see:
+
+Appointment API running on http://localhost:5000
+
+
+5. Start The Website
+--------------------
+
+Open another terminal and run:
+
+npm run dev
+
+Website:
+http://localhost:3000
+
+Admin page:
+http://localhost:3000/#admin
+
+Default admin login:
+
+Username: admin
+Password: admin
+
+
+6. Where Appointment Data Is Stored
+-----------------------------------
+
+Primary storage:
+MongoDB database
+
+Database:
+mudanur_hospital
+
+Collection:
+appointments
+
+Excel backup file:
+server/records/appointments.xlsx
+
+Activity logs:
+server/logs/activity.log
+
+Error logs:
+server/logs/errors.log
+
+
+7. Do We Need SQL Server?
+-------------------------
+
+No.
+
+This project does not currently use SQL Server, MySQL, or PostgreSQL.
+It uses MongoDB through Mongoose.
+
+If you want SQL Server instead, the backend must be changed from:
+MongoDB + Mongoose
+
+to:
+SQL Server + tedious/mssql or Prisma
+
+That is a separate backend migration.
+
+
+8. Common Problems
+------------------
+
+Problem:
+Booking form does not submit.
+
+Check:
+- Is MongoDB running?
+- Is backend running with npm run server?
+- Is MONGODB_URI correct in .env?
+- Is frontend running with npm run dev?
+
+
+Problem:
+Admin dashboard does not load appointments.
+
+Check:
+- Login with admin/admin
+- Backend must be running
+- MongoDB must be connected
+
+
+Problem:
+Appointment popup does not show.
+
+Reason:
+Popup appears only after booking is saved successfully in MongoDB.
+
+Check:
+- Backend running
+- MongoDB connected
+- Browser console/network errors
+- server/logs/errors.log
+

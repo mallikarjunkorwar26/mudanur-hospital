@@ -122,15 +122,32 @@ function SuccessModal({ appointment, onClose }) {
   if (!appointment) return null;
 
   return (
-    <div className="fixed inset-0 z-[80] flex items-center justify-center bg-slate-950/70 px-4 py-6 backdrop-blur-sm">
-      <div className="max-h-[92vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-white shadow-2xl">
+    <div className="fixed inset-0 z-[80] flex animate-fadeIn items-center justify-center bg-slate-950/70 px-4 py-6 backdrop-blur-sm">
+      <div className="max-h-[92vh] w-full max-w-2xl animate-fadeUp overflow-y-auto rounded-3xl bg-white shadow-2xl">
         <div className="bg-gradient-to-r from-brand-blue to-brand-teal px-5 py-5 text-white sm:px-7">
-          <h3 className="text-xl font-bold">
-            Appointment Request Submitted Successfully
-          </h3>
-          <p className="mt-1 text-sm text-white/90">
-            Mudanur Multispeciality Hospital
-          </p>
+          <div className="flex items-start gap-4">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/20 ring-1 ring-white/25">
+              <svg
+                className="h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+            </span>
+            <div>
+              <h3 className="text-xl font-bold">
+                Appointment Request Submitted Successfully
+              </h3>
+              <p className="mt-1 text-sm text-white/90">
+                Mudanur Multispeciality Hospital
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="space-y-4 px-5 py-6 text-sm leading-7 text-slate-600 sm:px-7">
@@ -202,6 +219,7 @@ export default function AppointmentForm() {
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState("");
   const [appointment, setAppointment] = useState(null);
+  const [genderOpen, setGenderOpen] = useState(false);
 
   const minDate = useMemo(() => todayDate(), []);
 
@@ -224,6 +242,9 @@ export default function AppointmentForm() {
         method: "POST",
         body: JSON.stringify(form),
       });
+      if (!data.appointment) {
+        throw new Error("Appointment response was incomplete");
+      }
       setAppointment(data.appointment);
       setForm(initialForm);
     } catch (error) {
@@ -313,20 +334,85 @@ export default function AppointmentForm() {
             <ErrorText>{errors.age}</ErrorText>
           </label>
 
-          <label className={labelClass}>
+          <div className={labelClass}>
             Gender <span className="text-red-500">*</span>
-            <select
-              value={form.gender}
-              onChange={(event) => updateField("gender", event.target.value)}
-              className={inputClass}
+            <div
+              className="relative mt-2"
+              onBlur={(event) => {
+                if (!event.currentTarget.contains(event.relatedTarget)) {
+                  setGenderOpen(false);
+                }
+              }}
             >
-              <option value="">Select gender</option>
-              <option>Male</option>
-              <option>Female</option>
-              <option>Other</option>
-            </select>
+              <button
+                type="button"
+                onClick={() => setGenderOpen((open) => !open)}
+                className={`flex min-h-[46px] w-full items-center justify-between rounded-xl border bg-white px-4 py-3 text-left text-sm shadow-sm outline-none transition-all duration-300 ${
+                  genderOpen
+                    ? "border-brand-teal ring-4 ring-brand-teal/10"
+                    : "border-slate-200 hover:border-brand-teal/60"
+                } ${form.gender ? "text-slate-900" : "text-slate-400"}`}
+                aria-expanded={genderOpen}
+              >
+                <span>{form.gender || "Select gender"}</span>
+                <svg
+                  className={`h-4 w-4 text-brand-teal transition-transform duration-300 ${
+                    genderOpen ? "rotate-180" : ""
+                  }`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+
+              <div
+                className={`absolute left-0 right-0 top-[calc(100%+8px)] z-30 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-softLg transition-all duration-200 ${
+                  genderOpen
+                    ? "translate-y-0 opacity-100"
+                    : "pointer-events-none -translate-y-2 opacity-0"
+                }`}
+              >
+                {["Male", "Female", "Other"].map((gender) => (
+                  <button
+                    type="button"
+                    key={gender}
+                    onClick={() => {
+                      updateField("gender", gender);
+                      setGenderOpen(false);
+                    }}
+                    className={`flex w-full items-center justify-between px-4 py-3 text-left text-sm transition-colors ${
+                      form.gender === gender
+                        ? "bg-brand-blue/10 font-semibold text-brand-blue"
+                        : "text-slate-700 hover:bg-brand-surface"
+                    }`}
+                  >
+                    {gender}
+                    {form.gender === gender && (
+                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-blue text-white">
+                        <svg
+                          className="h-3 w-3"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M20 6 9 17l-5-5" />
+                        </svg>
+                      </span>
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
             <ErrorText>{errors.gender}</ErrorText>
-          </label>
+          </div>
 
           <label className={labelClass}>
             Preferred Appointment Date <span className="text-red-500">*</span>

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import SectionHeading from "./SectionHeading";
 import { DOCTORS } from "../data/doctors";
 
@@ -9,7 +9,7 @@ function DoctorCard({ d, i }) {
 
   return (
     <article
-      className="reveal group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50"
+      className="reveal premium-card group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-xl hover:shadow-brand-blue/10"
       style={{ '--reveal-delay': `${Math.min(i, 8) * 55}ms` }}
     >
       {/* Photo */}
@@ -18,6 +18,8 @@ function DoctorCard({ d, i }) {
           <img
             src={photoSrc}
             alt={d.name}
+            loading="lazy"
+            decoding="async"
             onError={() => setImgError(true)}
             className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
           />
@@ -47,25 +49,10 @@ function DoctorCard({ d, i }) {
 }
 
 export default function Doctors() {
-  const sectionRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.15 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-    };
-  }, []);
-
   return (
     <section
       id="doctors"
-      ref={sectionRef}
-      className="bg-gradient-to-b from-slate-50 to-white py-14 sm:py-16"
+      className="surface-band bg-gradient-to-b from-slate-50 to-white py-14 sm:py-16"
     >
       <div className="section">
         <div className="reveal">
@@ -77,9 +64,7 @@ export default function Doctors() {
         </div>
 
         <div
-          className={`mt-10 grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 md:grid-cols-3 md:gap-5 lg:grid-cols-4 xl:grid-cols-6 sm:mt-14 transition-opacity duration-700 ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
+          className="mt-10 grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 md:grid-cols-3 md:gap-5 lg:grid-cols-4 xl:grid-cols-6 sm:mt-14"
         >
           {DOCTORS.map((doctor, index) => (
             <DoctorCard key={doctor.name} d={doctor} i={index} />

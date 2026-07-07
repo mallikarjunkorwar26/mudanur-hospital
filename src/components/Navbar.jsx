@@ -31,7 +31,7 @@ export default function Navbar() {
       : 'bg-white/20 backdrop-blur-xl border-b border-white/10'
   }`}
 >
-      <div className="section flex items-center justify-between gap-4 h-20 lg:h-[88px]">
+      <div className="section flex h-20 items-center justify-between gap-4 lg:h-24">
         <Logo tone="dark" compact />
 
         <nav className="hidden lg:flex items-center gap-2">

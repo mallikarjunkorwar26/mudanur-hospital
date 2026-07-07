@@ -44,6 +44,8 @@ export default function Hero() {
               <img
                 src={HospitalPhoto}
                 alt="Mudanur Hospital building"
+                fetchPriority="high"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1800ms] ease-out hover:scale-[1.03]"
               />
 

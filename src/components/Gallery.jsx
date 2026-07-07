@@ -45,6 +45,7 @@ export default function Gallery() {
                     src={imageUrl}
                     alt={t.title}
                     loading="lazy"
+                    decoding="async"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />
 
@@ -77,6 +78,7 @@ export default function Gallery() {
             <img
               src={new URL(`../images/${TILES[lightbox].image}`, import.meta.url).href}
               alt={TILES[lightbox].title}
+              decoding="async"
               className="w-full max-h-[80vh] object-contain rounded-2xl"
             />
 

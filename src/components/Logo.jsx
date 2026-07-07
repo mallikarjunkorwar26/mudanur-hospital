@@ -1,7 +1,7 @@
 import MudanurLogo from "../images/Mudanur Logo.png";
 
 export default function Logo({ compact = false }) {
-  const sizeClass = compact ? "h-12 sm:h-14 lg:h-16" : "h-14 sm:h-16";
+  const sizeClass = compact ? "h-14 sm:h-16 lg:h-20" : "h-16 sm:h-20";
 
   return (
     <a
@@ -12,7 +12,7 @@ export default function Logo({ compact = false }) {
       <img
         src={MudanurLogo}
         alt="Mudanur Hospital logo"
-        className={`${sizeClass} w-auto max-w-[180px] object-contain sm:max-w-[220px]`}
+        className={`${sizeClass} w-auto max-w-[210px] object-contain sm:max-w-[260px]`}
       />
     </a>
   );

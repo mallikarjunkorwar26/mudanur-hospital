@@ -74,6 +74,7 @@ export function toExcelRow(appointment) {
     "Reason for Visit": appointment.reasonForVisit,
     "Additional Message": appointment.additionalMessage || "",
     Status: appointment.status,
+    "Status Reason": appointment.statusReason || "",
   };
 }
 
@@ -134,6 +135,7 @@ export function writeAppointmentsPdf(res, appointments) {
       .text(
         `Mobile: ${item.mobileNumber} | Date: ${item.preferredDate} | Time: ${item.preferredTime} | Status: ${item.status}`
       )
+      .text(item.statusReason ? `Status Reason: ${item.statusReason}` : "")
       .text(`Reason: ${item.reasonForVisit}`);
   });
 

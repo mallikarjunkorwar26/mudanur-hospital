@@ -58,6 +58,11 @@ const appointmentSchema = new mongoose.Schema(
       default: "Pending",
       index: true,
     },
+    statusReason: {
+      type: String,
+      default: "",
+      trim: true,
+    },
     bookingDate: {
       type: Date,
       default: Date.now,

@@ -78,6 +78,15 @@ export default function AdminDashboard() {
   }, [appointments]);
 
   const updateStatus = async (id, status) => {
+    let statusReason = "";
+    if (status === "Cancelled") {
+      statusReason = window.prompt("Please enter the reason for cancellation:");
+      if (!statusReason || !statusReason.trim()) {
+        setError("Cancellation reason is required");
+        return;
+      }
+    }
+
     setSavingId(id);
     setError("");
     try {
@@ -86,7 +95,7 @@ export default function AdminDashboard() {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ status }),
+        body: JSON.stringify({ status, statusReason }),
       });
       setAppointments((current) =>
         current.map((item) => (item._id === id ? data.appointment : item))
@@ -320,6 +329,11 @@ export default function AdminDashboard() {
                             >
                               {item.status}
                             </span>
+                            {item.statusReason && (
+                              <p className="max-w-[180px] text-xs leading-5 text-slate-500">
+                                {item.statusReason}
+                              </p>
+                            )}
                             <select
                               value={item.status}
                               disabled={savingId === item._id}
