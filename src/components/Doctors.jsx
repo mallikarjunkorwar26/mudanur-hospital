@@ -5,11 +5,7 @@ import { DOCTORS } from "../data/doctors";
 function DoctorCard({ d, i }) {
   const [imgError, setImgError] = useState(false);
 
-  const photoSrc = d.photo
-    ? typeof d.photo === "string" && !d.photo.startsWith("/")
-      ? `/images/doctors/${d.photo}`
-      : d.photo
-    : null;
+  const photoSrc = d.photo || null;
 
   return (
     <article
