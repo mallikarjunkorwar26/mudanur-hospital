@@ -8,8 +8,7 @@ const NAV_LINKS = [
   { href: '#doctors', label: 'Doctors' },
   { href: '#services', label: 'Services' },
   { href: '#gallery', label: 'Gallery' },
-  { href: '#contact', label: 'Contact' },
-  { href: '#admin', label: 'Admin' }
+  { href: '#contact', label: 'Contact' }
 ]
 
 export default function Navbar() {

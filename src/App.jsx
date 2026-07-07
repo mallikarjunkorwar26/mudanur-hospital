@@ -8,7 +8,6 @@ import AppointmentCTA from './components/AppointmentCTA.jsx'
 import Gallery from './components/Gallery.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
-import AdminDashboard from './components/AdminDashboard.jsx'
 
 export default function App() {
   useEffect(() => {
@@ -60,7 +59,6 @@ export default function App() {
         <AppointmentCTA />
         <Gallery />
         <Contact />
-        <AdminDashboard />
       </main>
       <Footer />
     </div>
