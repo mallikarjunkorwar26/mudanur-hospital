@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: #0F172A;
+  background-color: #F7FDF9;
+  overflow-x: hidden;
+}
+
+/* Section utility */
+.section {
+  @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-12;
+}
+
+::selection {
+  color: white;
+  background: #0D9488;
+}
+
+a,
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+textarea {
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+input:focus,
+textarea:focus {
+  transform: translateY(-1px);
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1), transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hover-lift {
+  transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease, background-color 260ms ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.subtle-float {
+  animation: subtleFloat 7s ease-in-out infinite;
+}
+
+.sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.sheen::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -70%;
+  width: 45%;
+  transform: skewX(-18deg);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
+  transition: left 850ms ease;
+  pointer-events: none;
+}
+
+.sheen:hover::before {
+  left: 125%;
+}
+
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Hero background pattern (architectural / facade placeholder) */
+.hero-facade {
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(22, 163, 74, 0.22), transparent 60%),
+    radial-gradient(900px 500px at 0% 100%, rgba(13, 148, 136, 0.28), transparent 60%),
+    linear-gradient(135deg, #0f172a 0%, #0f766e 45%, #16a34a 100%);
+}
+.hero-facade::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.45) 0%, rgba(15, 23, 42, 0.25) 50%, rgba(15, 23, 42, 0.55) 100%);
+}
+
+/* Subtle building silhouette pattern */
+.facade-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Map placeholder */
+.map-placeholder {
+  background:
+    linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  background-image:
+    linear-gradient(rgba(16,163,105,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16,163,105,0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

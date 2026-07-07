@@ -1,0 +1,22 @@
+
+> mudanur-hospital@1.0.0 dev
+> vite --host 0.0.0.0
+
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m1246[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m3000[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.1.4:[1m3000[22m/[39m
+[2m9:55:46 am[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx, /src/index.css[22m
+[2m9:56:22 am[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m9:59:01 am[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Hero.jsx, /src/index.css[22m
+[2m9:59:47 am[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Navbar.jsx, /src/index.css[22m
+[2m10:00:01 am[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Button.jsx, /src/index.css[22m
+[2m10:00:31 am[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Services.jsx, /src/index.css[22m
+[2m10:00:48 am[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Doctors.jsx, /src/index.css[22m
+[2m10:01:09 am[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Gallery.jsx, /src/index.css[22m
+[2m10:01:28 am[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/About.jsx, /src/index.css[22m
+[2m10:01:38 am[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/AppointmentCTA.jsx, /src/index.css[22m
+[2m10:02:39 am[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx, /src/index.css[22m
+[2m10:06:11 am[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Navbar.jsx, /src/index.css[22m
+[2m10:08:02 am[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mtailwind.config.js[22m
