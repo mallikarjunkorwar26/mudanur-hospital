@@ -11,7 +11,7 @@ function DoctorCard({ d, i }) {
       style={{ "--reveal-delay": `${Math.min(i, 8) * 55}ms` }}
     >
       {/* Image */}
-      <div className="relative h-32 sm:h-40 md:h-52 lg:h-56 overflow-hidden bg-slate-100">
+      <div className="relative h-24 sm:h-40 md:h-52 lg:h-56 overflow-hidden bg-slate-100">
         {d.photo && !imgError ? (
           <img
             src={d.photo}
@@ -31,18 +31,18 @@ function DoctorCard({ d, i }) {
       </div>
 
       {/* Content */}
-      <div className="p-2 sm:p-3">
-        <h3 className="line-clamp-2 break-words text-[11px] font-semibold leading-4 text-slate-900 sm:text-sm">
+      <div className="p-1.5 sm:p-3">
+        <h3 className="line-clamp-2 break-words text-[10px] font-semibold leading-tight text-slate-900 sm:text-sm">
           {d.name}
         </h3>
 
         {d.qualification && (
-          <p className="mt-1 text-[9px] font-semibold uppercase tracking-wide text-brand-blue sm:text-[10px]">
+          <p className="mt-0.5 text-[8px] font-semibold uppercase tracking-wide text-brand-blue sm:text-[10px]">
             {d.qualification}
           </p>
         )}
 
-        <p className="mt-2 text-[10px] leading-4 text-slate-600 sm:text-[11px]">
+        <p className="mt-1 text-[9px] leading-snug text-slate-600 sm:text-[11px]">
           {d.specialization}
         </p>
       </div>

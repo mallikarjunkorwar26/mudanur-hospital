@@ -1,0 +1,6 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Build / generated assets (keep as-is)
+dist/ linguist-generated=true
+docs/ linguist-generated=true
