@@ -111,9 +111,9 @@ export default function Contact() {
             {INFO.map((item) => (
               <div
                 key={item.label}
-                className="group flex min-w-0 items-start gap-3 rounded-2xl border border-slate-200 bg-white px-3 py-3 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md sm:gap-4 sm:px-5 sm:py-4"
+                className="group flex min-w-0 items-start gap-3 rounded-2xl border border-brand-line/60 bg-white px-3 py-3 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-blue/30 hover:shadow-premium sm:gap-4 sm:px-5 sm:py-4"
               >
-                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white sm:h-10 sm:w-10">
+                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-blue/5 text-brand-blue transition-all duration-300 group-hover:bg-brand-blue group-hover:text-white sm:h-10 sm:w-10">
                   <span className="h-4 w-4 sm:h-5 sm:w-5">
                     <InfoIcon name={item.icon} />
                   </span>

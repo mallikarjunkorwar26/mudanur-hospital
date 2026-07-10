@@ -127,6 +127,17 @@ export default function Footer() {
       </div>
 
 
+      {/* Bottom bar */}
+      <div className="border-t border-white/10">
+        <div className="section flex flex-col items-center justify-between gap-3 py-5 sm:flex-row sm:py-4">
+          <p className="text-xs text-white/50">
+            &copy; {year} Mudanur Multispeciality Hospital. All rights reserved.
+          </p>
+          <p className="text-xs text-white/40">
+            Designed with care for our community
+          </p>
+        </div>
+      </div>
     </footer>
   )
 }

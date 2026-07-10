@@ -36,7 +36,6 @@ canvas {
   max-width: 100%;
 }
 
-/* Section utility */
 .section {
   @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 xl:px-12;
 }
@@ -88,13 +87,13 @@ textarea:focus {
   transform: translateY(-1px);
 }
 
-/* Reveal on scroll */
 .reveal {
   opacity: 0;
   transform: translateY(14px);
   transition: opacity 650ms cubic-bezier(0.22, 1, 0.36, 1), transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: var(--reveal-delay, 0ms);
 }
+
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
@@ -141,13 +140,13 @@ textarea:focus {
   }
 }
 
-/* Hero background pattern (architectural / facade placeholder) */
 .hero-facade {
   background:
     radial-gradient(1200px 600px at 80% -10%, rgba(22, 163, 74, 0.22), transparent 60%),
     radial-gradient(900px 500px at 0% 100%, rgba(13, 148, 136, 0.28), transparent 60%),
     linear-gradient(135deg, #0f172a 0%, #0f766e 45%, #16a34a 100%);
 }
+
 .hero-facade::after {
   content: "";
   position: absolute;
@@ -156,7 +155,6 @@ textarea:focus {
     linear-gradient(180deg, rgba(15, 23, 42, 0.45) 0%, rgba(15, 23, 42, 0.25) 50%, rgba(15, 23, 42, 0.55) 100%);
 }
 
-/* Subtle building silhouette pattern */
 .facade-grid {
   background-image:
     linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
@@ -164,7 +162,6 @@ textarea:focus {
   background-size: 56px 56px;
 }
 
-/* Map placeholder */
 .map-placeholder {
   background:
     linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
@@ -194,7 +191,6 @@ textarea:focus {
   }
 }
 
-/* Mobile optimization - Better touch targets */
 @media (max-width: 768px) {
   button,
   input,
@@ -208,12 +204,10 @@ textarea:focus {
     min-height: 44px;
   }
 
-  /* Better spacing between interactive elements */
   .rounded-2xl {
     border-radius: 12px;
   }
 
-  /* Optimize font sizing for readability */
   body {
     font-size: 15px;
   }
@@ -234,19 +228,16 @@ textarea:focus {
     font-size: 1.125rem;
   }
 
-  /* Better form input sizing on mobile */
   input[type="text"],
   input[type="email"],
   input[type="tel"],
   textarea {
-    font-size: 16px; /* Prevents zoom on iOS */
+    font-size: 16px;
     min-height: 44px;
     padding: 12px 16px;
   }
-
 }
 
-/* Landscape mode adjustments */
 @media (max-height: 600px) and (orientation: landscape) {
   .section {
     padding-top: 8px;
@@ -259,7 +250,6 @@ textarea:focus {
   }
 }
 
-/* Touch-friendly spacing for small screens */
 @media (max-width: 640px) {
   .reveal {
     opacity: 1;

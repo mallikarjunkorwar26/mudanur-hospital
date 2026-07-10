@@ -15,7 +15,7 @@ const initialForm = {
 };
 
 const inputClass =
-  "mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-brand-teal focus:ring-4 focus:ring-brand-teal/10";
+  "mt-2 w-full rounded-xl border border-brand-line/70 bg-white px-4 py-3 text-sm text-brand-ink shadow-sm outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-brand-teal focus:ring-4 focus:ring-brand-teal/10 focus:-translate-y-0.5";
 
 const labelClass = "block text-sm font-semibold text-slate-700";
 

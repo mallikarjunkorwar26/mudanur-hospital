@@ -137,12 +137,12 @@ export default function About() {
         </div>
 
         <div className="mt-12 flex justify-center sm:mt-16">
-          <div className="reveal w-full max-w-4xl overflow-hidden rounded-2xl bg-brand-blue shadow-lg">
+          <div className="reveal w-full max-w-4xl overflow-hidden rounded-2xl bg-gradient-to-r from-brand-blue to-brand-blueDark shadow-xl shadow-brand-blue/10">
             <div className="grid grid-cols-2 md:grid-cols-4">
               {STATS.map((item, index) => (
                 <div
                   key={item.label}
-                  className={`px-3 py-5 text-center sm:px-4 ${
+                  className={`px-3 py-6 text-center sm:px-4 ${
                     index < 2 ? "border-b border-white/15 md:border-b-0" : ""
                   } ${
                     index !== STATS.length - 1
@@ -150,10 +150,10 @@ export default function About() {
                       : ""
                   }`}
                 >
-                  <h3 className="text-2xl font-bold text-white sm:text-3xl">
+                  <h3 className="text-2xl font-extrabold text-white sm:text-3xl">
                     {item.value}
                   </h3>
-                  <p className="mt-1 text-xs text-blue-100 sm:text-sm">
+                  <p className="mt-1 text-xs text-blue-100/90 font-medium sm:text-sm">
                     {item.label}
                   </p>
                 </div>

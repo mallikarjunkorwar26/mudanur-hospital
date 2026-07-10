@@ -38,7 +38,7 @@ export default function Gallery() {
                 <figure
                   key={t.title}
                   onClick={() => setLightbox(i)}
-                  className="reveal group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:aspect-[3/4]"
+                  className="reveal group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-2xl shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-premium sm:aspect-[3/4]"
                   style={{ '--reveal-delay': `${i * 60}ms` }}
                 >
                   <img
@@ -50,11 +50,11 @@ export default function Gallery() {
                   />
 
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-90" />
 
                   {/* Caption */}
-                  <figcaption className="absolute bottom-0 left-0 right-0 px-3 py-3 opacity-100 transition-all duration-300 md:translate-y-1 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100">
-                    <p className="text-[11px] font-semibold text-white leading-snug text-center">
+                  <figcaption className="absolute bottom-0 left-0 right-0 px-4 py-4 opacity-100 transition-all duration-300 md:translate-y-2 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100">
+                    <p className="text-xs font-semibold text-white leading-snug text-center drop-shadow-sm">
                       {t.title}
                     </p>
                   </figcaption>

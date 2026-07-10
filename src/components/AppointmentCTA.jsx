@@ -4,8 +4,8 @@ export default function AppointmentCTA() {
   return (
     <section className="bg-white py-12 sm:py-14 lg:py-16">
       <div className="section">
-        <div className="reveal sheen overflow-hidden rounded-2xl bg-gradient-to-r from-brand-blue to-brand-blueDark shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl lg:rounded-3xl">
-          <div className="flex flex-col items-center justify-between gap-7 px-4 py-7 sm:px-6 sm:py-8 lg:flex-row lg:px-10 lg:py-10">
+        <div className="reveal sheen overflow-hidden rounded-2xl bg-gradient-to-r from-brand-blue to-brand-blueDark shadow-xl shadow-brand-blue/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-lg lg:rounded-3xl">
+          <div className="flex flex-col items-center justify-between gap-7 px-5 py-8 sm:px-8 sm:py-10 lg:flex-row lg:px-12 lg:py-12">
             <div className="max-w-2xl text-center lg:text-left">
               <span className="inline-flex rounded-full bg-white/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white sm:text-xs sm:tracking-[0.15em]">
                 24/7 Emergency & Appointments
